@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:44 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/06 14:48:48 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/06 15:37:02 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,10 +143,16 @@ void	PhoneBook::InitMenu(){
 	std::cout << "Write the following comands:" << std::endl;
 	while (true)
 	{
+		str = "";
 		std::cout << " --> ADD\n --> SEARCH\n --> EXIT" << std::endl;
 		std::getline(std::cin, buff);
+		std::cout << buff << std::endl;
 		for (size_t i = 0; i < buff.length(); i++)
-			str[i] = std::toupper(buff[i]);
+		{
+			str = str + ((char)std::toupper(buff[i]));
+			std::cout << str[i] << std::endl;
+		}
+		std::cout << str << std::endl;
 		if (str.compare("ADD") == 0)
 			PhoneBook::AddContact();
 		else if (str.compare("SEARCH") == 0)
