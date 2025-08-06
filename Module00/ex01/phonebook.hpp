@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:59 by dgargant          #+#    #+#             */
-/*   Updated: 2025/07/28 12:22:41 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/06 14:48:18 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <iostream>
 #include "Contact.hpp"
+#include <iomanip>
 
 # define N_CON 8
 # define RED "\001\033[0;31m\002"
@@ -29,10 +30,15 @@ class PhoneBook
 		PhoneBook();
 		~PhoneBook();
 		void InitMenu();
-		void AddContact();
 
 	private:
 		Contact contacts[N_CON];
+		int		count;
+		bool	maxCont;
+		void AddContact();
+		void SearchContact();
+		int	checkLeters(std::string arg);
+		int	checkNumbers(std::string arg);
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 11:01:37 by dgargant          #+#    #+#              #
-#    Updated: 2025/07/28 12:02:46 by dgargant         ###   ########.fr        #
+#    Updated: 2025/08/06 14:49:51 by dgargant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ RESET       = \033[0m
 BOLD_CYAN   = \033[1;96m
 
 
-SRCS := Contact.cpp	phonebook.cpp
+SRCS := Contact.cpp	phonebook.cpp main.cpp
 
 OBJS  = $(SRCS:.cpp=.o)
 

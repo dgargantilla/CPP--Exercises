@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 10:05:22 by dgargant          #+#    #+#             */
-/*   Updated: 2025/07/30 12:04:48 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/06 14:41:02 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 Contact::Contact()
 {
-	std::cout << "Contact Constructor called" << std::endl;
-	Contact *contact = new Contact;
+	//std::cout << "Contact Constructor called" << std::endl;
+	//Contact *contact = new Contact;
+	return ;
 }
 
-Contact::Contact(std::string name, std::string lastname, std::string nickname,
+/*Contact::Contact(std::string name, std::string lastname, std::string nickname,
 			int phoneNum, std::string secret){
 	std::cout << "Contact Constructor called" << std::endl;
 	Contact *contact = new Contact(name, lastname, nickname, phoneNum, secret);
-}
+}*/
 
 Contact::~Contact(){
-	std::cout << "Contact Destructor called" << std::endl;
+	//std::cout << "Contact Destructor called" << std::endl;
+	return ;
 }
 
 std::string	Contact::getName() const
@@ -68,12 +70,12 @@ void	Contact::setSecret(std::string secret)
 	this->secret = secret;
 }
 
-int	Contact::getPhoneNum() const
+std::string	Contact::getPhoneNum() const
 {
 	return(this->phoneNum);
 }
 
-void	Contact::setPhoneNum(int phoneNum)
+void	Contact::setPhoneNum(std::string phoneNum)
 {
 	this->phoneNum = phoneNum;
 }
