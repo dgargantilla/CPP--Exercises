@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:59 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/06 14:48:18 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/07 12:28:05 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <iostream>
 #include "Contact.hpp"
 #include <iomanip>
+#include <limits>
 
 # define N_CON 8
 # define RED "\001\033[0;31m\002"
