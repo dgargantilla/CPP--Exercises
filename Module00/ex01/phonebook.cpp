@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:44 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/07 13:20:08 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/08 10:13:18 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ PhoneBook::PhoneBook(){
 	//std::cout << "PhoneBook Constructor called" << std::endl;
 	//PhoneBook *phone = new PhoneBook;
 	this->count = 0;
+	this->count2 = 0;
 	this->maxCont = false;
 	return ;
 }
@@ -146,7 +147,9 @@ void	PhoneBook::AddContact()
 		}
 	}
 	this->count++;
-	if (this->count == 8)
+	if (this->maxCont == false)
+		this->count2++;
+	if (this->count == N_CON)
 	{
 		this->maxCont = true;
 		this->count = 0;
@@ -156,14 +159,14 @@ void	PhoneBook::AddContact()
 void	PhoneBook::SearchContact()
 {
 	std::string str = "";
-	for (int i = 0; i < this->count ; i++)
+	for (int i = 0; i < this->count2 ; i++)
 	{
 		str = this->contacts[i].getName();
 		if (str.length() >= 10)
 			str = str.substr(0, 9) + ".";
-		std::cout << "╔═══════════════════════════════════════════════════╗" << std::endl;
+		std::cout << "╔═══════════════════════════════════════════╗" << std::endl;
 		std::cout << "║" << std::ends;
-		std::cout << std::setw(10) << std::right << i << "|" << std::ends;
+		std::cout << std::setw(10) << std::right << (i + 1) << "|" << std::ends;
 		std::cout << std::setw(10) << std::right << str << "|" << std::ends;
 		str = this->contacts[i].getLastName();
 		if (str.length() >= 10)
@@ -172,9 +175,9 @@ void	PhoneBook::SearchContact()
 		str = this->contacts[i].getNickName();
 		if (str.length() >= 10)
 			str = str.substr(0, 9) + ".";
-		std::cout << std::setw(10) << std::right << str << std::endl;
-		std::cout << "║" << std::ends;
-		std::cout << "╚═══════════════════════════════════════════════════╝" << std::endl;
+		std::cout << std::setw(10) << std::right << str << std::ends;
+		std::cout << "║" << std::endl;
+		std::cout << "╚═══════════════════════════════════════════╝" << std::endl;
 	}
 }
 

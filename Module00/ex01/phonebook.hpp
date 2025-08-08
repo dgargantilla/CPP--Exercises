@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:59 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/07 12:28:05 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/08 10:06:55 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class PhoneBook
 	private:
 		Contact contacts[N_CON];
 		int		count;
+		int		count2;
 		bool	maxCont;
 		void AddContact();
 		void SearchContact();
