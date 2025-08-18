@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:59 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/08 10:06:55 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/08 12:28:02 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #ifndef	PHONEBOOK_H
 # define PHONEBOOK_H
 
-# include <iostream>
 #include "Contact.hpp"
+# include <iostream>
+#include <string>
+#include <cstdlib>
 #include <iomanip>
 #include <limits>
 

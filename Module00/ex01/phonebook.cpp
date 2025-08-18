@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:44 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/08 10:13:18 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/18 10:16:52 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,55 @@ void	PhoneBook::SearchContact()
 		std::cout << "║" << std::endl;
 		std::cout << "╚═══════════════════════════════════════════╝" << std::endl;
 	}
+	std::string buff;
+	while (true)
+	{
+		std::cout << GREEN "Select a contact to show" RESET<< std::endl;
+		std::getline(std::cin, buff);
+		if (std::cin.eof())
+			break;
+		if (buff[0] == '\0')
+			break;
+		if (checkNumbers(buff))
+			std::cout << RED "Invalid field" RESET<< std::endl;
+		else
+		{
+			int i = atoi(buff.c_str());
+			i -= 1;
+			if (i >= this->count2)
+			{
+				std::cout << RED "This user does not exist" RESET<< std::endl;
+				break;
+			}
+			str = this->contacts[i].getName();
+			if (str.length() >= 10)
+				str = str.substr(0, 9) + ".";
+			std::cout << "╔═════════════════════════════════════════════════════════════════╗" << std::endl;
+			std::cout << "║" << std::ends;
+			std::cout << std::setw(10) << std::right << (i + 1) << "|" << std::ends;
+			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+			str = this->contacts[i].getLastName();
+			if (str.length() >= 10)
+				str = str.substr(0, 9) + ".";
+			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+			str = this->contacts[i].getNickName();
+			if (str.length() >= 10)
+				str = str.substr(0, 9) + ".";
+			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+			str = this->contacts[i].getPhoneNum();
+			if (str.length() >= 10)
+				str = str.substr(0, 9) + ".";
+			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+			str = this->contacts[i].getSecret();
+			if (str.length() >= 10)
+				str = str.substr(0, 9) + ".";
+			std::cout << std::setw(10) << std::right << str << std::ends;
+			std::cout << "║" << std::endl;
+			std::cout << "╚═════════════════════════════════════════════════════════════════╝" << std::endl;
+			break;
+		}
+	}
+	
 }
 
 void	PhoneBook::InitMenu(){
