@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:44 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/18 10:16:52 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/19 12:23:58 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,25 +159,32 @@ void	PhoneBook::AddContact()
 void	PhoneBook::SearchContact()
 {
 	std::string str = "";
+	std::string tmp = "";
 	for (int i = 0; i < this->count2 ; i++)
 	{
 		str = this->contacts[i].getName();
 		if (str.length() >= 10)
-			str = str.substr(0, 9) + ".";
+			tmp = str.substr(0, 9) + ".";
 		std::cout << "╔═══════════════════════════════════════════╗" << std::endl;
 		std::cout << "║" << std::ends;
 		std::cout << std::setw(10) << std::right << (i + 1) << "|" << std::ends;
-		std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+		std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
+		//tmp.clear();
+		//str.clear();
 		str = this->contacts[i].getLastName();
 		if (str.length() >= 10)
-			str = str.substr(0, 9) + ".";
-		std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+			tmp = str.substr(0, 9) + ".";
+		std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
+		//tmp.clear();
+		//str.clear();
 		str = this->contacts[i].getNickName();
 		if (str.length() >= 10)
-			str = str.substr(0, 9) + ".";
-		std::cout << std::setw(10) << std::right << str << std::ends;
+			tmp = str.substr(0, 9) + ".";
+		std::cout << std::setw(10) << std::right << tmp << std::ends;
 		std::cout << "║" << std::endl;
 		std::cout << "╚═══════════════════════════════════════════╝" << std::endl;
+		//tmp.clear();
+		//str.clear();
 	}
 	std::string buff;
 	while (true)
@@ -201,27 +208,32 @@ void	PhoneBook::SearchContact()
 			}
 			str = this->contacts[i].getName();
 			if (str.length() >= 10)
-				str = str.substr(0, 9) + ".";
+				tmp = str.substr(0, 9) + ".";
 			std::cout << "╔═════════════════════════════════════════════════════════════════╗" << std::endl;
 			std::cout << "║" << std::ends;
 			std::cout << std::setw(10) << std::right << (i + 1) << "|" << std::ends;
-			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+			std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
+			//tmp.clear();
+			//str.clear();
 			str = this->contacts[i].getLastName();
 			if (str.length() >= 10)
-				str = str.substr(0, 9) + ".";
-			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+				tmp = str.substr(0, 9) + ".";
+			std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
+			//tmp.clear();
+			//str.clear();
 			str = this->contacts[i].getNickName();
 			if (str.length() >= 10)
-				str = str.substr(0, 9) + ".";
-			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+				tmp = str.substr(0, 9) + ".";
+			std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
+			//tmp.clear();
+			//str.clear();
 			str = this->contacts[i].getPhoneNum();
-			if (str.length() >= 10)
-				str = str.substr(0, 9) + ".";
 			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
+			//str.clear();
 			str = this->contacts[i].getSecret();
 			if (str.length() >= 10)
-				str = str.substr(0, 9) + ".";
-			std::cout << std::setw(10) << std::right << str << std::ends;
+				tmp = str.substr(0, 9) + ".";
+			std::cout << std::setw(10) << std::right << tmp << std::ends;
 			std::cout << "║" << std::endl;
 			std::cout << "╚═════════════════════════════════════════════════════════════════╝" << std::endl;
 			break;
