@@ -5,19 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/19 12:41:45 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/21 11:45:12 by dgargant         ###   ########.fr       */
+/*   Created: 2025/08/21 12:17:29 by dgargant          #+#    #+#             */
+/*   Updated: 2025/08/21 12:29:33 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+
 
 int main()
 {
-	Zombie* horde = zombieHorde(8, "pacoPico");
-	for (size_t i = 0; i < 8; i++)
-	{
-		horde[i].announce();
-	}
-	delete[] horde;
+	std::string brain = "HI THIS IS BRAIN";
+
+	std::string *stringPTR = &brain;
+	
+	std::string &stringREF = brain;
+
+	std::cout << &brain << std::endl;
+
+	std::cout << stringPTR << std::endl;
+
+	std::cout << &stringREF << std::endl;
+
+	std::cout << brain << std::endl;
+
+	std::cout << *stringPTR << std::endl;
+
+	std::cout << stringREF << std::endl;
 }

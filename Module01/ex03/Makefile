@@ -6,11 +6,11 @@
 #    By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 11:01:37 by dgargant          #+#    #+#              #
-#    Updated: 2025/08/21 12:17:10 by dgargant         ###   ########.fr        #
+#    Updated: 2025/08/21 14:53:54 by dgargant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	   = horde
+NAME	   = violence
 
 CXX          = c++
 
@@ -27,7 +27,7 @@ RESET       = \033[0m
 BOLD_CYAN   = \033[1;96m
 
 
-SRCS := Zombie.cpp	zombieHorde.cpp	main.cpp
+SRCS := HumanA.cpp	HumanB.cpp	Weapon.cpp	main.cpp
 
 OBJS  = $(SRCS:.cpp=.o)
 

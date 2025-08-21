@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/19 12:41:45 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/21 11:45:12 by dgargant         ###   ########.fr       */
+/*   Created: 2025/08/21 12:38:04 by dgargant          #+#    #+#             */
+/*   Updated: 2025/08/21 14:43:38 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef	HUMANB_H
+# define HUMANB_H
 
-int main()
+# include <iostream>
+# include "Weapon.hpp"
+
+class HumanB
 {
-	Zombie* horde = zombieHorde(8, "pacoPico");
-	for (size_t i = 0; i < 8; i++)
-	{
-		horde[i].announce();
-	}
-	delete[] horde;
-}
+	public:
+		HumanB(std::string name);
+		~HumanB();
+		void setWeapon(Weapon weapon);
+		void attack();
+	private:
+		Weapon _weapon;
+		std::string _name;
+};
+
+
+#endif

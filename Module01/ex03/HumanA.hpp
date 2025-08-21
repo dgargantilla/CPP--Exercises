@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/19 12:41:45 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/21 11:45:12 by dgargant         ###   ########.fr       */
+/*   Created: 2025/08/21 12:37:58 by dgargant          #+#    #+#             */
+/*   Updated: 2025/08/21 14:34:22 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef	HUMANA_H
+# define HUMANA_H
 
-int main()
+# include <iostream>
+# include "Weapon.hpp"
+
+class HumanA
 {
-	Zombie* horde = zombieHorde(8, "pacoPico");
-	for (size_t i = 0; i < 8; i++)
-	{
-		horde[i].announce();
-	}
-	delete[] horde;
-}
+	public:
+		HumanA(std::string name, Weapon weapon);
+		~HumanA();
+		void attack();
+	private:
+		Weapon _weapon;
+		std::string _name;
+};
+
+
+#endif

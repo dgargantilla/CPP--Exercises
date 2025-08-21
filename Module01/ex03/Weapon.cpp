@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/19 12:41:45 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/21 11:45:12 by dgargant         ###   ########.fr       */
+/*   Created: 2025/08/21 12:38:08 by dgargant          #+#    #+#             */
+/*   Updated: 2025/08/21 14:37:16 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main()
+Weapon::Weapon(std::string type) : _type(type)
 {
-	Zombie* horde = zombieHorde(8, "pacoPico");
-	for (size_t i = 0; i < 8; i++)
-	{
-		horde[i].announce();
-	}
-	delete[] horde;
+}
+
+Weapon::~Weapon()
+{
+}
+
+void Weapon::setType(std::string type)
+{
+	this->_type = type;
+}
+
+std::string Weapon::getType()
+{
+	return(this->_type);
 }
