@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 10:33:58 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/19 11:52:20 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/08/25 10:25:12 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int main()
 {
-	Zombie zombie1 = Zombie();
+	Zombie zombie1;
+
 	zombie1.announce();
 	
 	std::cout << std::endl;

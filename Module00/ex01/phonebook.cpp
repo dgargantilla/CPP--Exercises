@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:40:44 by dgargant          #+#    #+#             */
-/*   Updated: 2025/08/19 12:23:58 by dgargant         ###   ########.fr       */
+/*   Updated: 2025/10/28 11:33:43 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		PhoneBook::checkNumbers(std::string arg)
 void	PhoneBook::AddContact()
 {
 	bool	can_loop = true;
-	std::string buff;
+	std::string buff = "";
 	if (this->count < N_CON && this->maxCont == false)
 		this->contacts[this->count] = Contact();
 	while (can_loop)
@@ -79,7 +79,7 @@ void	PhoneBook::AddContact()
 		}
 	}
 	while (can_loop)
-	{	
+	{
 		std::cout << GREEN "Write the last name contact" RESET<< std::endl;
 		std::getline(std::cin, buff);
 		if (std::cin.eof())
@@ -96,7 +96,7 @@ void	PhoneBook::AddContact()
 		}
 	}
 	while (can_loop)
-	{	
+	{
 		std::cout << GREEN "Write the nickname contact" RESET<< std::endl;
 		std::getline(std::cin, buff);
 		if (std::cin.eof())
@@ -113,7 +113,7 @@ void	PhoneBook::AddContact()
 		}
 	}
 	while (can_loop)
-	{	
+	{
 		std::cout << GREEN "Write the phonenumber contact" RESET<< std::endl;
 		std::getline(std::cin, buff);
 		if (std::cin.eof())
@@ -129,8 +129,9 @@ void	PhoneBook::AddContact()
 			break;
 		}
 	}
+	buff = "";
 	while (can_loop)
-	{	
+	{
 		std::cout << GREEN "Write a dark secret" RESET<< std::endl;
 		std::getline(std::cin, buff);
 		if (std::cin.eof())
@@ -165,26 +166,32 @@ void	PhoneBook::SearchContact()
 		str = this->contacts[i].getName();
 		if (str.length() >= 10)
 			tmp = str.substr(0, 9) + ".";
+		else if (str.length() < 10)
+				tmp = str;
 		std::cout << "╔═══════════════════════════════════════════╗" << std::endl;
 		std::cout << "║" << std::ends;
 		std::cout << std::setw(10) << std::right << (i + 1) << "|" << std::ends;
 		std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
-		//tmp.clear();
-		//str.clear();
+		tmp.clear();
+		str.clear();
 		str = this->contacts[i].getLastName();
 		if (str.length() >= 10)
 			tmp = str.substr(0, 9) + ".";
+		else if (str.length() < 10)
+				tmp = str;
 		std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
-		//tmp.clear();
-		//str.clear();
+		tmp.clear();
+		str.clear();
 		str = this->contacts[i].getNickName();
 		if (str.length() >= 10)
 			tmp = str.substr(0, 9) + ".";
+		else if (str.length() < 10)
+				tmp = str;
 		std::cout << std::setw(10) << std::right << tmp << std::ends;
+		tmp.clear();
+		str.clear();
 		std::cout << "║" << std::endl;
 		std::cout << "╚═══════════════════════════════════════════╝" << std::endl;
-		//tmp.clear();
-		//str.clear();
 	}
 	std::string buff;
 	while (true)
@@ -209,30 +216,38 @@ void	PhoneBook::SearchContact()
 			str = this->contacts[i].getName();
 			if (str.length() >= 10)
 				tmp = str.substr(0, 9) + ".";
+			else if (str.length() < 10)
+				tmp = str;
 			std::cout << "╔═════════════════════════════════════════════════════════════════╗" << std::endl;
 			std::cout << "║" << std::ends;
 			std::cout << std::setw(10) << std::right << (i + 1) << "|" << std::ends;
 			std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
-			//tmp.clear();
-			//str.clear();
+			tmp.clear();
+			str.clear();
 			str = this->contacts[i].getLastName();
 			if (str.length() >= 10)
 				tmp = str.substr(0, 9) + ".";
+			else if (str.length() < 10)
+				tmp = str;
 			std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
-			//tmp.clear();
-			//str.clear();
+			tmp.clear();
+			str.clear();
 			str = this->contacts[i].getNickName();
 			if (str.length() >= 10)
 				tmp = str.substr(0, 9) + ".";
+			else if (str.length() < 10)
+				tmp = str;
 			std::cout << std::setw(10) << std::right << tmp << "|" << std::ends;
-			//tmp.clear();
-			//str.clear();
+			tmp.clear();
+			str.clear();
 			str = this->contacts[i].getPhoneNum();
 			std::cout << std::setw(10) << std::right << str << "|" << std::ends;
-			//str.clear();
+			str.clear();
 			str = this->contacts[i].getSecret();
 			if (str.length() >= 10)
 				tmp = str.substr(0, 9) + ".";
+			else if (str.length() < 10)
+				tmp = str;
 			std::cout << std::setw(10) << std::right << tmp << std::ends;
 			std::cout << "║" << std::endl;
 			std::cout << "╚═════════════════════════════════════════════════════════════════╝" << std::endl;
