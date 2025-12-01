@@ -6,11 +6,11 @@
 #    By: dgargantilla <dgargantilla@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 11:01:37 by dgargant          #+#    #+#              #
-#    Updated: 2025/11/28 11:07:32 by dgargantill      ###   ########.fr        #
+#    Updated: 2025/11/28 12:51:43 by dgargantill      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	   = losers
+NAME	   = harl
 
 CXX          = c++
 
@@ -27,7 +27,7 @@ RESET       = \033[0m
 BOLD_CYAN   = \033[1;96m
 
 
-SRCS :=	Replacer.cpp	main.cpp
+SRCS :=	main.cpp	Harl.cpp
 
 OBJS  = $(SRCS:.cpp=.o)
 
